@@ -1,0 +1,21 @@
+#prova {
+	background-color: blue;
+}
+
+#login_form {
+	border: 2px solid black;
+	padding: 1em;
+	margin: 10em auto 0 auto;
+	background-color: white;
+	width: 50%;
+/*
+	CSS 3:
+*/
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+#login_form input:hover{
+	background-color: #FFFFB3;
+}
