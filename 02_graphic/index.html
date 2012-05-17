@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type">
+<!-- Utile se il vostro editor scrive i file con una codifica utf8
+	<meta content="text/html;" charset="UTF-8" http-equiv="Content-Type">
+-->
+	<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
 	<title>GOLEM</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript" scr="script.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 </head>
 
-<body data-gatto="Ciro" id="prova">
+<body data-gatto="Ciro" id="prova" onLoad="dimmi();" >
 
 <form action="target.php" method="get" id="login_form" >
 <h1>GOLEM LOGIN</h1>
@@ -16,6 +19,11 @@
 <input type="password" name="pwd" value="password" />
 <input type="submit" value="login" name="tasto" />
 </form>
+<div id="box" >
+<p>Questo è un testo ben leggibile.<br />E' diverso dall'esempio w3c:<a href="http://www.w3schools.com/css/css_image_transparency.asp">esempio</a></p>
+
+</div>
+<div id="sfondo_trasparente" ></div>
 
 
 </body>
