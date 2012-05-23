@@ -1,5 +1,8 @@
 <?php
 	session_start();
+/*
+	session_set_cookie_params( ( 60*60*24*31 ) );
+*/
 	if( isset( $_GET['action'] ) && $_GET['action'] == 'logout' ) {
 			session_destroy();
 			session_start();
@@ -15,6 +18,19 @@
 		$msg = 'SEI LOGGATO ' . strip_tags($_SESSION['username']);
 		$msg .= '<br /><a href="index.php?action=logout">logout</a>';
 	}
+	else if( isset( $_COOKIE['loggato'] ) ) {
+/*
+		DICIAMO A QUALE UTENTE APPARTIENE LA KEY. In questo caso abbiamo la key solo dell'utente golem
+*/
+		if( $_COOKIE['loggato'] == '295af788720746df05022ecd3355c762' ) {
+				$msg = 'Finalmente sei loggato.';
+				$_SESSION['logged'] = 1;
+				$_SESSION['username'] = 'golem';
+				$valore = md5(time());
+				setcookie('loggato', $valore, (time()+60*60*24*30), '','localhost',FALSE,FALSE);			
+				$msg = 'mi ricordo di te';
+		}
+	}
 	else if( isset($_POST['user'] ) && isset($_POST['pwd'] ) ) {
 /*
 		NON FARE DA SOLI A CASA. MA CON L'AIUTO DI UN PROFESSIONISTA
@@ -24,6 +40,8 @@
 				$msg = 'Finalmente sei loggato.';
 				$_SESSION['logged'] = 1;
 				$_SESSION['username'] = $_POST['user'];
+				$valore = md5(time());
+				setcookie('loggato', $valore, (time()+60*60*24*30), '','localhost',FALSE,FALSE);
 			}
 			else {
 				$msg = 'Hai sbagliato la password. Ma è facile, riprova.';				
