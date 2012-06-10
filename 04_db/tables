@@ -1,0 +1,67 @@
+CREATE TABLE vocabolari (
+	vid INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	PRIMARY KEY vid (vid),
+	FULLTEXT name (name)
+) TYPE = MyISAM COMMENT ='';
+
+
+CREATE TABLE termini (
+	tid INT NOT NULL AUTO_INCREMENT,
+	vid INT NOT NULL,
+	name VARCHAR(50) NOT NULL,
+	PRIMARY KEY tid (tid),
+	KEY vid (vid)
+) TYPE = MyISAM COMMENT ='';
+
+
+mysql> INSERT INTO termini (vid,name) VALUES (1,'casa');
+mysql> INSERT INTO termini (vid,name) VALUES (1,'casa');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (1,'destra');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (1,'sinistra');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (2,'left');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (2,'right');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (2,'house');
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (1,'destra');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (1,'sinistra');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (2,'left');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (2,'right');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (2,'house');
+
+mysql> INSERT INTO termini (vid,name) VALUES (1,'casa');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (1,'destra');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (1,'sinistra');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (2,'left');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (2,'right');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO termini (vid,name) VALUES (2,'house');

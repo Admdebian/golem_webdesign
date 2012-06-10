@@ -1,0 +1,13 @@
+$db = mysql_connect(user,pwd,database);
+mysql_select_db( );
+$resu = mysql_query('query', $db);
+while( $row = mysql_fetch_row( $resu ) ) {
+	echo $row[0] . $row[1] . '<br>';
+}
+mysql_affected_rows();
+mysql_insert_id();
+mysql_close();
+
+PERMESSI SU DB:
+CREATE USER 'NOME'@'localhost' IDENTIFIED BY 'PWD';
+GRANT ALL ON DBNAME.* TO 'NOME'@'localhost';

@@ -27,7 +27,7 @@
 				$_SESSION['logged'] = 1;
 				$_SESSION['username'] = 'golem';
 				$valore = md5(time());
-				setcookie('loggato', $valore, (time()+60*60*24*30), '','localhost',FALSE,FALSE);			
+				setcookie('loggato', $valore, (time()+60*60*24*30), '','host',FALSE,FALSE);			
 				$msg = 'mi ricordo di te';
 		}
 	}
